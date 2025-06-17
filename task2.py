@@ -1,5 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import scipy.integrate as spi
+import random
 
 # Визначення функції та межі інтегрування
 def f(x):
@@ -41,15 +43,6 @@ plt.show()
 
 
 'quad'
-import scipy.integrate as spi
-
-# Визначте функцію, яку потрібно інтегрувати, наприклад, f(x) = x^2
-def f(x):
-    return x**2
-
-# Визначте межі інтегрування, наприклад, від 0 до 1
-a = 0  # нижня межа
-b = 2  # верхня межа
 
 # Обчислення інтеграла
 result, error = spi.quad(f, a, b)
@@ -61,11 +54,10 @@ print("Інтеграл: ", result, error)
 
 
 'Monte carlo'
-import random
 
 def is_inside(a, b, x, y):
     """Перевіряє, чи знаходиться точка (x, y) всередині трикутника."""
-    return y <= (b / a) * x
+    return y <= f(x)
 
 def monte_carlo_simulation(a, b, num_experiments):
     """Виконує серію експериментів методом Монте-Карло."""
@@ -90,9 +82,9 @@ def monte_carlo_simulation(a, b, num_experiments):
     return average_area
 
 # Розміри прямокутника
-a = 10  # ширина прямокутника
-b = 5  # висота прямокутника
-S = (a * b) / 2  # Теоретична площа
+a = 2  # ширина прямокутника
+b = 4  # висота прямокутника
+S = result
 
 # Кількість експериментів
 num_experiments = 100
