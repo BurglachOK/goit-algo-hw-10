@@ -91,6 +91,6 @@ num_experiments = 100
 
 # Виконання симуляції
 average_area = monte_carlo_simulation(a, b, num_experiments)
-print(f"Теоретична площа трикутника: {S}")
-print(f"Середня площа трикутника за {num_experiments} експериментів: {average_area}")
+print(f"Рішення через quad: {S}")
+print(f"Середня площа за {num_experiments} експериментів: {average_area}")
 
